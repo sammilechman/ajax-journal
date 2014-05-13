@@ -1,5 +1,7 @@
 JournalApp::Application.routes.draw do
-  namespace :api do
+  root :to => "api/posts#index"
+
+  namespace :api, defaults: {format: :json} do
     resources :posts, except: [:new, :edit]
   end
 end
