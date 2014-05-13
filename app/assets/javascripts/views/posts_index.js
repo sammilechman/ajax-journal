@@ -2,7 +2,9 @@ window.JA.Views.PostsIndex = Backbone.View.extend({
   template: JST["posts_index"],
 
   initialize: function() {
-    this.listenTo(this.collection, "destroy", this.render);
+    this.listenTo(this.collection,
+      "destroy add change:title reset",
+      this.render);
   },
 
   render: function () {
@@ -26,7 +28,6 @@ window.JA.Views.PostsIndex = Backbone.View.extend({
     event.preventDefault();
     var id = $(event.target).data('id')
     var model = this.collection.get(id)
-
     model.destroy();
   }
 
