@@ -16,20 +16,18 @@ window.JA.Views.PostShow = Backbone.View.extend({
     return this;
   },
 
-  // events: {
-  //   "click button.delete": "remove"
-  // },
+  events: {
+    "click button.back": "back"
+  },
 
   // refresh: function() {
   //   this.collection.fetch();
   // },
 
-  // remove: function(event) {
-  //   event.preventDefault();
-  //   var id = $(event.target).data('id')
-  //   var model = this.collection.get(id)
-  //   model.destroy();
-  // }
+  back: function(event) {
+    event.preventDefault();
+    Backbone.history.navigate("", { trigger: true });
+  }
 
 });
 

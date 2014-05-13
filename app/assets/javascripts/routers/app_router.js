@@ -6,7 +6,6 @@ window.JA.Routers.AppRouter = Backbone.Router.extend({
 
   postsIndex: function () {
 
-
     var posts = JA.Collections.posts
     posts.fetch({
       success: function(response) {
@@ -28,7 +27,6 @@ window.JA.Routers.AppRouter = Backbone.Router.extend({
       model: post
     });
     $("#content").html(showView.render().$el);
-    debugger;
 
 
     // posts.fetch({
