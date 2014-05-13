@@ -1,0 +1,7 @@
+<h2>rending your template</h2>
+
+<% posts.each( function(post) { %>
+  POST:<br>
+  <%= post.get('title') %>
+  <button class='delete' data-id="<%= post.get('id')%>">Delete</button><br>
+<% }) %>

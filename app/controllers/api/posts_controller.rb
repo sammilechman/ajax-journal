@@ -11,23 +11,24 @@ class Api::PostsController < ApplicationController
   end
 
   def update
+
   end
 
   def index
-    respond_to do |format|
-      format.json do
-
-      end
-      format.html do
-        render :index
-      end
-    end
+    @posts = Post.all
+    render json: @posts
   end
 
   def show
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      render json: @post
+    else
+      render json: @post.errors, status: :unprocessable_entity
+    end
   end
 
   private
