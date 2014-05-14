@@ -2,6 +2,6 @@
 
 <% posts.each( function(post) { %>
   POST:<br>
-  <%= post.get('title') %>
+  <a href='#posts/<%= post.get('id')%>'><%= post.get('title') %></a>
   <button class='delete' data-id="<%= post.get('id')%>">Delete</button><br>
 <% }) %>

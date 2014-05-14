@@ -1,6 +1,7 @@
 window.JA.Routers.AppRouter = Backbone.Router.extend({
   routes: {
     "": "postsIndex",
+    "posts/new": "postForm",
     "posts/:id": "postShow",
   },
 
@@ -23,22 +24,18 @@ window.JA.Routers.AppRouter = Backbone.Router.extend({
     // var post = JA.Collections.posts.fetch(id);
 
     var post = JA.Collections.posts.getOrFetch(id);
-    // debugger;
     var showView = new JA.Views.PostShow({
       model: post
     });
     $("#content").html(showView.render().$el);
 
+  },
 
-    // posts.fetch({
-    //   success: function(response) {
-    //     var view = new JA.Views.PostsIndex({
-    //       collection: posts
-    //     });
-    //     $("#content").html(view.render().$el);
-    //   }
-    // })
-
-
+  postForm: function() {
+    var post = new JA.Models.Post();
+    var formView = new JA.Views.PostForm({
+      model: post
+    });
+    $("#content").html(formView.render().$el);
   }
 });

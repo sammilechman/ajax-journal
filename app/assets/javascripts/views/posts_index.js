@@ -17,7 +17,8 @@ window.JA.Views.PostsIndex = Backbone.View.extend({
   },
 
   events: {
-    "click button.delete": "remove"
+    "click button.delete": "remove",
+    // "click .link-show:": "jumpToShow"
   },
 
   // refresh: function() {
@@ -29,7 +30,13 @@ window.JA.Views.PostsIndex = Backbone.View.extend({
     var id = $(event.target).data('id')
     var model = this.collection.get(id)
     model.destroy();
-  }
+  },
+  //
+  // jumpToShow: function(event) {
+  //   event.preventDefault();
+  //   var id = $(event.target).data('id')
+  //
+  // }
 
 });
 
