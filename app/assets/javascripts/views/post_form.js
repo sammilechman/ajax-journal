@@ -1,11 +1,11 @@
 window.JA.Views.PostForm = Backbone.View.extend({
   template: JST["post_form"],
 
-  // initialize: function() {
-  //   this.listenTo(this.model,
-  //     "all",
-  //     this.render);
-  // },
+  initialize: function() {
+    this.listenTo(this.model,
+      "sync",
+      this.render);
+  },
 
   render: function () {
     console.log('rendering Form view')

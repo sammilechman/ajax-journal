@@ -3,12 +3,12 @@ window.JA.Views.PostShow = Backbone.View.extend({
 
   initialize: function() {
     this.listenTo(this.model,
-      "all",
+      "sync",
       this.render);
   },
 
   render: function () {
-    console.log('rendering show view')
+    alert('rendering show view')
     var renderedContent = this.template({
       post: this.model
     });

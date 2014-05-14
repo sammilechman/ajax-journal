@@ -8,7 +8,7 @@ window.JA.Views.PostsIndex = Backbone.View.extend({
   },
 
   render: function () {
-    console.log('rendering')
+    alert('rendering index')
     var renderedContent = this.template({
       posts: this.collection
     });
@@ -17,26 +17,16 @@ window.JA.Views.PostsIndex = Backbone.View.extend({
   },
 
   events: {
-    "click button.delete": "remove",
+    "click button.delete": "deleteThing",
     // "click .link-show:": "jumpToShow"
   },
 
-  // refresh: function() {
-  //   this.collection.fetch();
-  // },
-
-  remove: function(event) {
+  deleteThing: function(event) {
     event.preventDefault();
     var id = $(event.target).data('id')
     var model = this.collection.get(id)
     model.destroy();
   },
-  //
-  // jumpToShow: function(event) {
-  //   event.preventDefault();
-  //   var id = $(event.target).data('id')
-  //
-  // }
 
 });
 
