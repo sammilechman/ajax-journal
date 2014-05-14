@@ -23,6 +23,7 @@ window.JA.Routers.AppRouter = Backbone.Router.extend({
     // var post = JA.Collections.posts.fetch(id);
 
     var post = JA.Collections.posts.getOrFetch(id);
+    // debugger;
     var showView = new JA.Views.PostShow({
       model: post
     });

@@ -1,11 +1,11 @@
 window.JA.Views.PostShow = Backbone.View.extend({
   template: JST["post_show"],
 
-  // initialize: function() {
-  //   this.listenTo(this.collection,
-  //     "destroy add change:title reset",
-  //     this.render);
-  // },
+  initialize: function() {
+    this.listenTo(this.model,
+      "all",
+      this.render);
+  },
 
   render: function () {
     console.log('rendering show view')

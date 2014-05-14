@@ -6,6 +6,7 @@ window.JA.Collections.Posts = Backbone.Collection.extend({
   getOrFetch: function (id) {
     var model;
     var posts = this;
+    // debugger;
     if (model = this.get(id)) {
       model.fetch();
       return model;
